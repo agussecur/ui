@@ -50,7 +50,6 @@ template intCallback(name, supertyp, basetyp, on) {.dirty.} =
 type
   Grid* = ref object of Widget
     impl*: ptr rawui.Grid
-    append*: proc () {.closure.}
 
 proc add*[SomeWidget: Widget](t: Grid; c: SomeWidget, left: cint, top: cint, xspan: cint, yspan: cint, hexpand: cint, halign: Align, vexpand: cint, valign: Align) =
   gridAppend t.impl, c.impl, left, top, xspan, yspan, hexpand, halign, vexpand, valign
